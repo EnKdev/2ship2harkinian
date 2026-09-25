@@ -26,6 +26,9 @@ namespace StaticData {
 // clang-format off
 std::map<RandoItemId, RandoStaticItem> Items = {
     RI(RI_UNKNOWN,                    "",     "Unknown",                    RITYPE_JUNK,            ITEM_NONE,                       GI_NONE,                     GID_NONE),
+    RI(RI_ABILITY_CLIMB,              "the",  "Ability to Climb",           RITYPE_MAJOR,           ITEM_NONE,                       GI_NONE,                     GID_NONE),
+    RI(RI_ABILITY_OPEN_CHESTS,        "the",  "Ability to Open Chests",     RITYPE_MAJOR,           ITEM_NONE,                       GI_NONE,                     GID_NONE),
+    RI(RI_ABILITY_PICKUP,             "the",  "Power Bracelet",             RITYPE_MAJOR,           ITEM_NONE,                       GI_NONE,                     GID_NONE),
     RI(RI_ABILITY_SWIM,               "the",  "Ability to Swim",            RITYPE_MAJOR,           ITEM_NONE,                       GI_NONE,                     GID_NONE),
     RI(RI_ARROW_FIRE,                 "",     "Fire Arrows",                RITYPE_MAJOR,           ITEM_ARROW_FIRE,                 GI_ARROW_FIRE,               GID_ARROW_FIRE),
     RI(RI_ARROW_ICE,                  "",     "Ice Arrows",                 RITYPE_MAJOR,           ITEM_ARROW_ICE,                  GI_ARROW_ICE,                GID_ARROW_ICE),

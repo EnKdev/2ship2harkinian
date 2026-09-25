@@ -585,6 +585,12 @@ bool Rando::IsItemObtainable(RandoItemId randoItemId, RandoCheckId randoCheckId)
         case RI_SOUL_ENEMY_WIZROBE:
         case RI_SOUL_ENEMY_WOLFOS:
             return !Flags_GetRandoInf(SOUL_RI_TO_RANDO_INF(randoItemId));
+        case RI_ABILITY_CLIMB:
+            return !Flags_GetRandoInf(RANDO_INF_OBTAINED_CLIMB);
+        case RI_ABILITY_OPEN_CHESTS:
+            return !Flags_GetRandoInf(RANDO_INF_OBTAINED_OPEN_CHESTS);
+        case RI_ABILITY_PICKUP:
+            return !Flags_GetRandoInf(RANDO_INF_OBTAINED_PICKUP);
         case RI_ABILITY_SWIM:
             return !Flags_GetRandoInf(RANDO_INF_OBTAINED_SWIM);
         case RI_FROG_BLUE:
