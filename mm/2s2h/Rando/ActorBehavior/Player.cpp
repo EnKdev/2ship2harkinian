@@ -27,7 +27,31 @@ void RespawnOnWaterTouch(Player* player) {
     }
 }
 
+void PreventPickups(Player* player) {
+    // This prevents picking actors up like Bushes, Rocks, Pots, etc. if
+    // The ability to pickup things has not yet been found.
+    // TODO: Figure out how to fetch the actor ID that the player wants to pickup to prevent a pickup from happening.
+}
+
+void PreventOpenChest(Player* player) {
+    // This prevents opening chests if the ability to do so has not yet been found.
+    // TODO: Figure out how to prevent the "chest-open state" if the actor the player wants to interact with is a chest.
+}
+
+void PreventClimbing(Player* player) {
+    // This prevents the player from climbing up Ladders or the wall at Mountain Village if
+    // The ability to do so has not yet been found.
+    // TODO: Figure out how to prevent the "climbing state" if the player wants to interact with a climbable object/actor.
+}
+
 void Rando::ActorBehavior::InitPlayerBehavior() {
+    COND_ID_HOOK(OnActorUpdate, ACTOR_PLAYER, IS_RANDO && RANDO_SAVE_OPTIONS[RO_SHUFFLE_PICKUP], [](Actor* actor) {
+        Player* player = GET_PLAYER(gPlayState);
+        if (!Flags_GetRandoInf(RANDO_INF_OBTAINED_PICKUP)) {
+            PreventPickups(player);
+        }
+    });
+
     COND_ID_HOOK(OnActorUpdate, ACTOR_PLAYER, IS_RANDO && RANDO_SAVE_OPTIONS[RO_SHUFFLE_SWIM], [](Actor* actor) {
         Player* player = GET_PLAYER(gPlayState);
         if (!Flags_GetRandoInf(RANDO_INF_OBTAINED_SWIM)) {
